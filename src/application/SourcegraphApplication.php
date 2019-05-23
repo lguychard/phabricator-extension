@@ -40,7 +40,8 @@ final class SourcegraphApplication extends PhabricatorApplication
             CelerityAPI::getStaticResourceResponse()
                 ->addContentSecurityPolicyURI('connect-src', $url)
                 ->addContentSecurityPolicyURI('script-src', $url)
-                ->addContentSecurityPolicyURI('script-src', 'blob');
+                ->addContentSecurityPolicyURI('script-src', 'blob:')
+                ->addContentSecurityPolicyURI('script-src', 'data:');
         }
 
         Javelin::initBehavior('sourcegraph-config', array(
