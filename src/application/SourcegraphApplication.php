@@ -40,7 +40,6 @@ final class SourcegraphApplication extends PhabricatorApplication
             CelerityAPI::getStaticResourceResponse()
                 ->addContentSecurityPolicyURI('connect-src', $url)
                 ->addContentSecurityPolicyURI('frame-src', $url)
-                ->addContentSecurityPolicyURI('child-src', $url)
                 ->addContentSecurityPolicyURI('script-src', $url);
         }
 
